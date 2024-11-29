@@ -19,9 +19,10 @@ public class MemberService {
     //회원가입(같은 이름이 있는 중복 회원 X)
     public Long join(Member member){
 
-        validateDuplicateMember(member);
-        memberRepository.save(member);
-        return member.getId();
+            validateDuplicateMember(member);
+            memberRepository.save(member);
+
+            return member.getId();
     }
 
     //중복 회원 검증
@@ -33,7 +34,8 @@ public class MemberService {
     }
 
     //전체 회원 조회
-    public List<Member> findMembers(){
+    public List<Member> findMembers() {
+
         return memberRepository.findAll();
     }
 
